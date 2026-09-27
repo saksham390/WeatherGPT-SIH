@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: weathergpt-backend
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+gemini:
+  enabled: ${GEMINI_ENABLED:false}
+  api-key: ${GEMINI_API_KEY:}
+  model: ${GEMINI_MODEL:gemini-3.8-flash}
+
+rag:
+  enabled: ${RAG_ENABLED:false}
+  embedding-model: ${GEMINI_EMBEDDING_MODEL:text-embedding-004}
+  table: ${RAG_TABLE:weathergpt_knowledge}
+
+database:
+  host: ${DATABASE_HOST:localhost}
+  port: ${DATABASE_PORT:5432}
+  name: ${DATABASE_NAME:weathergpt}
+  username: ${DATABASE_USERNAME:weathergpt}
+  password: ${DATABASE_PASSWORD:weathergpt}
+
+server:
+  port: 8080
+
+weather:
+  provider: ${WEATHER_PROVIDER:mock}
+  alerts:
+    heavy-rain-mm: ${WEATHER_HEAVY_RAIN_MM:50}
+    high-wind-kmh: ${WEATHER_HIGH_WIND_KMH:60}
+    extreme-heat-c: ${WEATHER_EXTREME_HEAT_C:40}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

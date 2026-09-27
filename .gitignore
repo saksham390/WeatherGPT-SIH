@@ -1,0 +1,10 @@
+target/
+node_modules/
+dist/
+.tools/
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/*
+!.vscode/extensions.json

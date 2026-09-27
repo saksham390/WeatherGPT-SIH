@@ -1,0 +1,112 @@
+:root {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #18232b;
+  background: #e9f1ed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; }
+
+.app-shell {
+  min-height: 100vh;
+  padding: clamp(2rem, 7vw, 7rem) clamp(1.25rem, 7vw, 8rem);
+  background: radial-gradient(circle at 85% 10%, #f7d9a9 0 12%, transparent 36%), linear-gradient(135deg, #e9f1ed 0%, #d7e4e0 100%);
+}
+
+.hero-panel { max-width: 760px; }
+
+.eyebrow, .panel-index {
+  margin: 0 0 1rem;
+  color: #bf5f43;
+  font: 700 0.75rem/1.2 Arial, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 { margin: 0; font-size: clamp(4rem, 13vw, 9rem); line-height: 0.86; letter-spacing: -0.06em; }
+h2 { margin: 0.8rem 0 0.5rem; font-size: 1.7rem; }
+p { line-height: 1.55; }
+.hero-copy { max-width: 520px; margin: 2rem 0; font-size: 1.2rem; }
+
+.status-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(24, 35, 43, 0.18);
+  border-radius: 999px;
+  font: 600 0.85rem Arial, sans-serif;
+}
+
+.status-dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: #d59f36; }
+.status-online { background: #38856d; }
+.status-offline { background: #bf5f43; }
+
+.error-banner, .loading-message { max-width: 760px; margin-top: 2rem; padding: 1rem; background: rgba(191, 95, 67, 0.15); border-left: 4px solid #bf5f43; }
+.loading-message { background: rgba(84, 141, 168, 0.15); border-color: #548da8; }
+.dashboard-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1rem; max-width: 1060px; margin-top: 5rem; }
+.weather-panel { padding: 1.5rem; background: rgba(255, 255, 255, 0.63); }
+.current-panel { grid-row: span 2; background: #182f38; color: #f5f1e8; }
+.alerts-panel { grid-column: 2; }
+.panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.panel-heading .panel-index { margin-bottom: 0; }
+.source-badge { padding: 0.35rem 0.55rem; border: 1px solid rgba(245, 241, 232, 0.4); border-radius: 999px; font: 600 0.7rem Arial, sans-serif; text-transform: uppercase; }
+.location-label { margin: 3rem 0 0; font: 600 1.1rem Arial, sans-serif; }
+.temperature { margin: 0.5rem 0; font-size: clamp(4rem, 10vw, 7rem); line-height: 1; }
+.temperature span { font-size: 2rem; vertical-align: top; }
+.condition { color: #c2d4d0; }
+.metrics { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; font: 0.8rem Arial, sans-serif; color: #c2d4d0; }
+.metrics strong { display: block; color: #f5f1e8; font-size: 1rem; }
+.forecast-list { margin-top: 1rem; }
+.forecast-row { display: grid; grid-template-columns: 3rem 1fr auto; gap: 0.75rem; padding: 0.75rem 0; border-top: 1px solid rgba(24, 35, 43, 0.15); font: 0.85rem Arial, sans-serif; }
+.alert-item { margin-top: 1rem; padding: 0.8rem; border-left: 4px solid #bf5f43; background: rgba(191, 95, 67, 0.12); font: 0.85rem Arial, sans-serif; }
+.alert-item span { float: right; font-weight: 700; color: #bf5f43; }
+.alert-item p { margin-bottom: 0; }
+.quiet-message { font: 0.9rem Arial, sans-serif; color: #536269; }
+.chat-panel { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2rem; align-items: end; max-width: 1060px; margin-top: 5rem; padding: 1.5rem; background: #f5f1e8; }
+.chat-panel h2 { margin-top: 0; }
+.chat-note { margin-bottom: 0; color: #536269; font-size: 0.9rem; }
+.chat-form { display: flex; gap: 0.6rem; }
+.chat-form input { min-width: 0; flex: 1; padding: 0.9rem; border: 1px solid rgba(24, 35, 43, 0.3); background: white; font: 1rem Georgia, serif; }
+.chat-form select { padding: 0.9rem; border: 1px solid rgba(24, 35, 43, 0.3); background: white; font: 0.85rem Arial, sans-serif; }
+.chat-form button { padding: 0.9rem 1.2rem; border: 0; background: #182f38; color: #f5f1e8; font: 700 0.85rem Arial, sans-serif; cursor: pointer; }
+.chat-form button:disabled { opacity: 0.55; cursor: wait; }
+.chat-answer { grid-column: 2; padding: 1rem; border-left: 4px solid #548da8; background: white; }
+.chat-answer p { margin-bottom: 0; }
+.farmer-panel { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2rem; max-width: 1060px; margin-top: 1rem; padding: 1.5rem; background: #d7e4e0; }
+.farmer-panel h2 { margin-top: 0; }
+.farmer-form { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; align-items: end; }
+.farmer-form label { display: grid; gap: 0.35rem; font: 0.75rem Arial, sans-serif; text-transform: uppercase; }
+.farmer-form input { width: 100%; padding: 0.75rem; border: 1px solid rgba(24, 35, 43, 0.3); background: white; font: 1rem Georgia, serif; }
+.farmer-form button { grid-column: 1 / -1; padding: 0.8rem; border: 0; background: #bf5f43; color: white; font: 700 0.8rem Arial, sans-serif; cursor: pointer; }
+.advisory-result { grid-column: 2; padding: 1rem; background: white; font: 0.9rem Arial, sans-serif; }
+.advisory-result p { margin: 0.35rem 0 1rem; }
+.advisory-result ul { padding-left: 1.25rem; }
+.advisory-result small { color: #536269; }
+.history-panel { max-width: 1060px; margin-top: 1rem; }
+.dark-badge { border-color: rgba(24, 35, 43, 0.25); }
+.chart-wrap { margin-top: 1rem; }
+.content-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; max-width: 1060px; margin-top: 7rem; }
+.feature-panel { min-height: 220px; padding: 1.5rem; border-top: 5px solid; background: rgba(255, 255, 255, 0.58); }
+.feature-panel p { max-width: 24rem; margin-bottom: 0; }
+.accent-sky { border-color: #548da8; }
+.accent-gold { border-color: #d59f36; }
+.accent-coral { border-color: #bf5f43; }
+
+@media (max-width: 720px) {
+  .app-shell { padding-top: 3rem; }
+  .dashboard-grid { grid-template-columns: 1fr; margin-top: 4rem; }
+  .current-panel { grid-row: auto; }
+  .alerts-panel { grid-column: auto; }
+  .chat-panel { grid-template-columns: 1fr; margin-top: 4rem; }
+  .chat-answer { grid-column: auto; }
+  .chat-form { flex-direction: column; }
+  .farmer-panel { grid-template-columns: 1fr; }
+  .farmer-form { grid-template-columns: 1fr; }
+  .advisory-result { grid-column: auto; }
+  .content-grid { grid-template-columns: 1fr; margin-top: 4rem; }
+  .feature-panel { min-height: auto; }
+}
